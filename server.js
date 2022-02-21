@@ -29,20 +29,10 @@ app.get('/',(req, res) => {
 
 app.get('/posts', authenticateToken,(req, res) => {
     console.log(req.user.name)
-    res.json(posts.filter(post => post.username === req.user.name))
+    // res.json(posts.filter(post => post.username === req.user.name))
+  res.json(posts)
 })
 
-
-app.post('/login', (req, res) => {
-    
-    const username = req.body.username;
-    const user = { name: username }
-
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    console.log("Logged!")
-    res.json({accessToken: accessToken})
-    
-})
 
 // Middleware
 function authenticateToken (req,res,next)  {
@@ -53,12 +43,12 @@ function authenticateToken (req,res,next)  {
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
         console.log(err)
         if (err) return res.sendStatus(403)
-        req.user = user
+        req.user = user.name
         next()
     }) 
 }
 
 // RUN SERVER
 app.listen(3000, () => {
-    console.log("Sever running at port 3000..")
+    console.log("Main sever running at port 3000..")
 })

@@ -4,8 +4,8 @@
   "description": "jwt authentication with node.js",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "prod": "npm app.js"
+    "server": "nodemon server.js",
+    "authServer": "nodemon authServer.js"
   },
   "author": "Daniel",
   "license": "ISC",
