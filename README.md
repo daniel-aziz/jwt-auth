@@ -1,3 +1,4 @@
 ## JWT AUTH
 
-JWT Authentication on node.js server
+JWT Authentication on a node.js server
+this project implements the microservice architecture
