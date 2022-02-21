@@ -1,0 +1,17 @@
+{
+  "name": "jwt-auth",
+  "version": "1.0.0",
+  "description": "jwt authentication with node.js",
+  "main": "app.js",
+  "scripts": {
+    "startDev": "nodemon app.js",
+    "startProd":""
+  },
+  "author": "Daniel",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
